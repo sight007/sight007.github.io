@@ -1,11 +1,11 @@
 <!DOCTYPE HTML>
-<html lang="zh-CN">
+<html lang="en">
 
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="归档, null">
-    <meta name="description" content="归档 | null">
+    <meta name="keywords" content="Archives, null">
+    <meta name="description" content="Archives | null">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>归档 | null</title>
+    <title>Archives | null</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -54,7 +54,7 @@
             
             <i class="fa fa-home"></i>
             
-            <span>首页</span>
+            <span>Index</span>
         </a>
     </li>
     
@@ -63,7 +63,7 @@
             
             <i class="fa fa-tags"></i>
             
-            <span>标签</span>
+            <span>Tags</span>
         </a>
     </li>
     
@@ -72,7 +72,7 @@
             
             <i class="fa fa-bookmark"></i>
             
-            <span>分类</span>
+            <span>Categories</span>
         </a>
     </li>
     
@@ -81,7 +81,7 @@
             
             <i class="fa fa-archive"></i>
             
-            <span>归档</span>
+            <span>Archives</span>
         </a>
     </li>
     
@@ -90,7 +90,7 @@
             
             <i class="fa fa-user-circle-o"></i>
             
-            <span>关于</span>
+            <span>About</span>
         </a>
     </li>
     
@@ -99,13 +99,13 @@
             
             <i class="fa fa-address-book"></i>
             
-            <span>友情链接</span>
+            <span>Friends</span>
         </a>
     </li>
     
     <li>
         <a href="#searchModal" class="modal-trigger waves-effect waves-light">
-            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+            <i id="searchIcon" class="fa fa-search" title="Search"></i>
         </a>
     </li>
 </ul>
@@ -133,7 +133,7 @@
                 
                 <i class="fa fa-fw fa-home"></i>
                 
-                首页
+                Index
             </a>
         </li>
         
@@ -142,7 +142,7 @@
                 
                 <i class="fa fa-fw fa-tags"></i>
                 
-                标签
+                Tags
             </a>
         </li>
         
@@ -151,7 +151,7 @@
                 
                 <i class="fa fa-fw fa-bookmark"></i>
                 
-                分类
+                Categories
             </a>
         </li>
         
@@ -160,7 +160,7 @@
                 
                 <i class="fa fa-fw fa-archive"></i>
                 
-                归档
+                Archives
             </a>
         </li>
         
@@ -169,7 +169,7 @@
                 
                 <i class="fa fa-fw fa-user-circle-o"></i>
                 
-                关于
+                About
             </a>
         </li>
         
@@ -178,7 +178,7 @@
                 
                 <i class="fa fa-fw fa-address-book"></i>
                 
-                友情链接
+                Friends
             </a>
         </li>
         
@@ -297,7 +297,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
     let option = {
         title: {
             top: 0,
-            text: '文章日历',
+            text: 'Post Calendar',
             left: 'center',
             textStyle: {
                 color: '#3C4858'
@@ -343,12 +343,12 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 show: false
             },
             monthLabel: {
-                nameMap: 'cn',
+                nameMap: 'en',
                 fontSize: 11
             },
             dayLabel: {
                 formatter: '{start}  1st',
-                nameMap: 'cn',
+                nameMap: 'en',
                 fontSize: 11
             }
         }],
@@ -488,8 +488,8 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
 <div id="searchModal" class="modal">
     <div class="modal-content">
         <div class="search-header">
-            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
-            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;Search</span>
+            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword" class="search-input">
         </div>
         <div id="searchResult"></div>
     </div>
