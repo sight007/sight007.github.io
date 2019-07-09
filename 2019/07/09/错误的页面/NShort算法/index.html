@@ -4,13 +4,13 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="超平面数学推导, null">
-    <meta name="description" content="感知机和SVM里面都有超平面，每次看的时候都感觉是似而非，没有讲清楚。这几天花时间，把超平面详细推导了一下，特以记录，免得以后忘了。
+    <meta name="keywords" content="NShort算法, null">
+    <meta name="description" content="参考博文：https://max.book118.com/html/2018/0506/165048123.shtm
 
-已知下面几个条件：
 
-WX = 0
-（向量W是一个固定的向量，X代表与W垂直的一系列向量，也就是从0指向">
+
+
+">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +18,7 @@ WX = 0
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>超平面数学推导 | null</title>
+    <title>NShort算法 | null</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -265,13 +265,13 @@ WX = 0
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        超平面数学推导
+                        NShort算法
                     </div>
                 </div>
             </div>
@@ -382,24 +382,12 @@ WX = 0
                     
                     <div class="article-tag">
                         
+                            <a href="/tags/NLP/" target="_blank">
+                                <span class="chip bg-color">NLP</span>
+                            </a>
+                        
                             <a href="/tags/算法/" target="_blank">
                                 <span class="chip bg-color">算法</span>
-                            </a>
-                        
-                            <a href="/tags/超平面/" target="_blank">
-                                <span class="chip bg-color">超平面</span>
-                            </a>
-                        
-                            <a href="/tags/SVM/" target="_blank">
-                                <span class="chip bg-color">SVM</span>
-                            </a>
-                        
-                            <a href="/tags/感知机/" target="_blank">
-                                <span class="chip bg-color">感知机</span>
-                            </a>
-                        
-                            <a href="/tags/机器学习/" target="_blank">
-                                <span class="chip bg-color">机器学习</span>
                             </a>
                         
                     </div>
@@ -429,34 +417,11 @@ WX = 0
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>感知机和<code>SVM</code>里面都有超平面，每次看的时候都感觉是似而非，没有讲清楚。这几天花时间，把超平面详细推导了一下，特以记录，免得以后忘了。</p>
-<p><img src="/2019/07/09/超平面数学推导/WorkSpaces/hexoWork/myHexoblog/source/_posts/%E9%94%99%E8%AF%AF%E7%9A%84%E9%A1%B5%E9%9D%A2/%E8%B6%85%E5%B9%B3%E9%9D%A2%E6%95%B0%E5%AD%A6%E6%8E%A8%E5%AF%BC/a.jpg" alt></p>
-<p>已知下面几个条件：</p>
-<ol>
-<li><p><code>WX = 0</code></p>
-<p>（向量<code>W</code>是一个固定的向量，<code>X</code>代表与<code>W</code>垂直的一系列向量，也就是从0指向点<code>x</code>，一条直线<code>La</code>。此直线的法向量为<code>W</code>）</p>
-</li>
-<li><p><code>W (X-P) = 0</code></p>
-<p>(<code>W</code>还是原来的那个<code>W</code>，<code>X</code>是另外一未知数了。假设有条直线，经过某一点<code>p</code>，与<code>W</code>垂直，向量<code>（X - P）</code>与<code>W</code>垂直)</p>
-</li>
-<li><p><code>W (X-P) = 0</code>      ===》   <code>||W|| * ||X - P|| * cosα = 0</code></p>
-</li>
-</ol>
-<h3 id="推导过程如图所见，下面来讨论下结果："><a href="#推导过程如图所见，下面来讨论下结果：" class="headerlink" title="推导过程如图所见，下面来讨论下结果："></a>推导过程如图所见，下面来讨论下结果：</h3><ul>
-<li><p>超平面<code>WX + b = 0</code><br>里面<code>b</code>是什么意思？</p>
-<p>以前总以为<code>b</code>是直线的截距，但这个说法错误百出。正确的结论是：<code>b = - ||P|| * ||W|| * cosθ</code>，也就是<code>b = - d * ||W||</code>。所以 ，b是一个负值，当法向量<code>W</code>为单位向量时，大小为<code>d</code>。</p>
-</li>
-<li><p><code>d</code>是什么？</p>
-<p>超平面距离原点的距离。为直线<code>Lb</code>上的点到法向量<code>W</code>的投影长度，可见直线上所有的点的投影长度都是相同。</p>
-</li>
-<li><p>某一点到超平面的距离是什么？</p>
-<p>（点A到原点的距离，<code>d+ad</code>。<code>A * W = ||A|| * ||W|| * cosα =(d+ad)* ||W||</code>，再除以<code>||W||</code>）</p>
-<p>= （点A到超平面的距离）+ （超平面到原点的距离）</p>
-</li>
-<li><p><code>|WX + b|/(||W||)</code>什么意思？</p>
-<p>这是某点到超平面的距离。<code>|WX + b|</code>中加<code>b</code>实际上是减去了超平面到原点的距离。</p>
-</li>
-</ul>
+                <p>参考博文：<a href="https://max.book118.com/html/2018/0506/165048123.shtm" target="_blank" rel="noopener">https://max.book118.com/html/2018/0506/165048123.shtm</a></p>
+<p><img src="/2019/07/09/错误的页面/NShort算法/NShort-1.png" alt></p>
+<p><img src="/2019/07/09/错误的页面/NShort算法/WorkSpaces/hexoWork/myHexoblog/source/_posts/NShort%E7%AE%97%E6%B3%95/NShort-2.jpg" alt></p>
+<p><img src="/2019/07/09/错误的页面/NShort算法/WorkSpaces/hexoWork/myHexoblog/source/_posts/NShort%E7%AE%97%E6%B3%95/NShort-3.jpg" alt></p>
+<p><img src="/2019/07/09/错误的页面/NShort算法/WorkSpaces/hexoWork/myHexoblog/source/_posts/NShort%E7%AE%97%E6%B3%95/NShort-4.jpg" alt></p>
 
             </div>
             <hr/>
@@ -615,9 +580,9 @@ WX = 0
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《超平面数学推导》
+                    《NShort算法》
                 </span> by
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/07/09/超平面数学推导/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/07/09/错误的页面/NShort算法/" property="cc:attributionName"
                rel="cc:attributionURL">
                 sight007
             </a> is licensed under a
@@ -661,48 +626,6 @@ WX = 0
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2019/07/09/NShort算法/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="NShort算法">
-                        
-                        <span class="card-title">NShort算法</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            参考博文：https://max.book118.com/html/2018/0506/165048123.shtm
-
-
-
-
-
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-09
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-user fa-fw"></i>
-                            sight007
-                            
-                        </span>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                Next&nbsp;<i class="fa fa-chevron-right"></i>
-            </div>
-            <div class="card">
                 <a href="/2019/07/09/错误的页面/超平面数学推导/">
                     <div class="card-image">
                         
@@ -724,9 +647,9 @@ WX = 0
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-09
-                            </span>
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-09
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
@@ -756,6 +679,57 @@ WX = 0
                     
                     <a href="/tags/机器学习/" target="_blank">
                         <span class="chip bg-color">机器学习</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/06/17/NLP-最大匹配算法/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="最大匹配算法">
+                        
+                        <span class="card-title">最大匹配算法</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            最大匹配算法是分词算法，一般有正向匹配算法、逆向匹配算法。
+参考博客：https://www.cnblogs.com/Jm-15/p/9403352.html
+一、正向匹配算法选取一元词典中最长的词的长度作为切割长度（如词典中“中华人名共和
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-17
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-user fa-fw"></i>
+                            sight007
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/NLP/" target="_blank">
+                        <span class="chip bg-color">NLP</span>
+                    </a>
+                    
+                    <a href="/tags/算法/" target="_blank">
+                        <span class="chip bg-color">算法</span>
                     </a>
                     
                 </div>
