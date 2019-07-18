@@ -4,10 +4,9 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="最大匹配算法, null">
-    <meta name="description" content="最大匹配算法是分词算法，一般有正向匹配算法、逆向匹配算法。
-参考博客：https://www.cnblogs.com/Jm-15/p/9403352.html
-一、正向匹配算法选取一元词典中最长的词的长度作为切割长度（如词典中“中华人名共和">
+    <meta name="keywords" content="无偏估计（除以n-1的问题）, null">
+    <meta name="description" content="https://blog.csdn.net/Hearthougan/article/details/77859173
+样本均值为$\overline{X}$，样本方差为$\ S^2$，总体均值为$\mu$，总体方差为$\sigma^2$，那">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -15,7 +14,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>最大匹配算法 | null</title>
+    <title>无偏估计（除以n-1的问题） | null</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -262,13 +261,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        最大匹配算法
+                        无偏估计（除以n-1的问题）
                     </div>
                 </div>
             </div>
@@ -379,12 +378,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/NLP/" target="_blank">
-                                <span class="chip bg-color">NLP</span>
+                            <a href="/tags/样本估计/" target="_blank">
+                                <span class="chip bg-color">样本估计</span>
                             </a>
                         
-                            <a href="/tags/算法/" target="_blank">
-                                <span class="chip bg-color">算法</span>
+                            <a href="/tags/统计学/" target="_blank">
+                                <span class="chip bg-color">统计学</span>
                             </a>
                         
                     </div>
@@ -398,7 +397,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2019-06-17
+                    2019-07-12
                 </div>
 
                 
@@ -414,18 +413,14 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>最大匹配算法是分词算法，一般有正向匹配算法、逆向匹配算法。</p>
-<p>参考博客：<a href="https://www.cnblogs.com/Jm-15/p/9403352.html" target="_blank" rel="noopener">https://www.cnblogs.com/Jm-15/p/9403352.html</a></p>
-<h2 id="一、正向匹配算法"><a href="#一、正向匹配算法" class="headerlink" title="一、正向匹配算法"></a>一、正向匹配算法</h2><p>选取一元词典中最长的词的长度作为切割长度（如词典中“中华人名共和国”为最长的词，length=7）。</p>
+                <p><a href="https://blog.csdn.net/Hearthougan/article/details/77859173" target="_blank" rel="noopener">https://blog.csdn.net/Hearthougan/article/details/77859173</a></p>
+<p>样本均值为$\overline{X}$，样本方差为$\ S^2$，总体均值为$\mu$，总体方差为$\sigma^2$，那么样本方差$\ S^2$的公式为：<br>$$<br>\ S^2 = \dfrac{1}{n-1} \sum_{i=1}^{n}(x_i - \overline X)^2<br>$$<br>标准的方差公式都是除以$n​$，这种计算方法合情合理，没有毛病。</p>
+<p>但上面的公式需要除以$（n-1）$，此时求的是无偏估计。</p>
+<p>所谓无偏估计就是指：</p>
 <ul>
-<li>第一轮，从0开始，从左往右切7个字符。每次从右往左切一个字符，剩下的字符匹配字典（若匹配成功，则把匹配成功的那个截取掉，用剩下的词继续做），直到剩下最后一个字符。</li>
-<li>第二轮，从1开始，从左往右切7个字符。。。。</li>
-<li>。。。。。</li>
-<li>最后一轮，只剩最后一个字符。。。。</li>
+<li>无偏估计是用<a href="https://baike.baidu.com/item/%E6%A0%B7%E6%9C%AC/19974592" target="_blank" rel="noopener">样本</a>统计量来估计总体参数时的一种无偏推断。估计量的<a href="https://baike.baidu.com/item/%E6%95%B0%E5%AD%A6%E6%9C%9F%E6%9C%9B/5362790" target="_blank" rel="noopener">数学期望</a>等于被估计参数的<a href="https://baike.baidu.com/item/%E7%9C%9F%E5%AE%9E%E5%80%BC/4519199" target="_blank" rel="noopener">真实值</a>，则称此估计量为被估计参数的无偏估计，即具有无偏性，是一种用于评价估计量优良性的准则。无偏估计的意义是：在多次重复下，它们的平均数接近所估计的参数真值。无偏估计常被应用于测验分数统计中。</li>
 </ul>
-<p>总的来说就是：每轮从左往右走，每次从右往左走。</p>
-<h2 id="二、逆向匹配算法"><a href="#二、逆向匹配算法" class="headerlink" title="二、逆向匹配算法"></a>二、逆向匹配算法</h2><p>与正向匹配算法类似，只是方向反了，字典也是逆序字典。</p>
-<p>每轮从右往左走，每次从左往右走。</p>
+<p>可见，利用样本求总体的方差时，如果除以$n$，那么所得到的值应该小于总体方差 $\sigma ^2$。为了得到无偏差性的结果，也就是这个结果的期望值是真实的总体方差，bixuya</p>
 
             </div>
             <hr/>
@@ -460,9 +455,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《最大匹配算法》
+                    《无偏估计（除以n-1的问题）》
                 </span> by
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/06/17/NLP-最大匹配算法/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/07/12/无偏估计（除以n-1的问题）/" property="cc:attributionName"
                rel="cc:attributionURL">
                 sight007
             </a> is licensed under a
@@ -503,7 +498,7 @@
         repo: '',
         owner: '',
         admin: null,
-        id: '2019-06-17T00-00-00',
+        id: '2019-07-12T10-55-11',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -522,7 +517,7 @@
 <script src="/libs/gitment/gitment.js"></script>
 <script>
 var gitment = new Gitment({
-    id: 'Mon Jun 17 2019 00:00:00 GMT+0800',
+    id: 'Fri Jul 12 2019 10:55:11 GMT+0800',
     owner: '',
     repo: '',
     oauth: {
@@ -546,9 +541,9 @@ gitment.render('gitment-content');
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'http://sight007.github.io/2019/06/17/NLP-最大匹配算法/';
-        this.page.identifier = '/2019/06/17/NLP-最大匹配算法/';
-        this.page.title = '最大匹配算法';
+        this.page.url = 'http://sight007.github.io/2019/07/12/无偏估计（除以n-1的问题）/';
+        this.page.identifier = '/2019/07/12/无偏估计（除以n-1的问题）/';
+        this.page.title = '无偏估计（除以n-1的问题）';
     };
     let disqus_shortname = '';
 
@@ -597,29 +592,26 @@ gitment.render('gitment-content');
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2019/07/09/超平面数学推导/">
+                <a href="/2019/07/18/交叉熵损失函数求导-梯度下降算法/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="超平面数学推导">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="交叉熵损失函数求导 梯度下降算法">
                         
-                        <span class="card-title">超平面数学推导</span>
+                        <span class="card-title">交叉熵损失函数求导 梯度下降算法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            感知机和SVM里面都有超平面，每次看的时候都感觉是似而非，没有讲清楚。这几天花时间，把超平面详细推导了一下，特以记录，免得以后忘了。
+                            
+利用链式法则把交叉熵求导分解为三部分，分别求出各部分。
 
-已知下面几个条件：
-
-WX = 0
-（向量W是一个固定的向量，X代表与W垂直的一系列向量，也就是从0指向
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-09
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-18
                         </span>
                         <span class="publish-author">
                             
@@ -632,24 +624,20 @@ WX = 0
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/算法/" target="_blank">
-                        <span class="chip bg-color">算法</span>
-                    </a>
-                    
                     <a href="/tags/机器学习/" target="_blank">
                         <span class="chip bg-color">机器学习</span>
                     </a>
                     
-                    <a href="/tags/超平面/" target="_blank">
-                        <span class="chip bg-color">超平面</span>
+                    <a href="/tags/损失函数/" target="_blank">
+                        <span class="chip bg-color">损失函数</span>
                     </a>
                     
-                    <a href="/tags/SVM/" target="_blank">
-                        <span class="chip bg-color">SVM</span>
+                    <a href="/tags/逻辑回归/" target="_blank">
+                        <span class="chip bg-color">逻辑回归</span>
                     </a>
                     
-                    <a href="/tags/感知机/" target="_blank">
-                        <span class="chip bg-color">感知机</span>
+                    <a href="/tags/梯度下降/" target="_blank">
+                        <span class="chip bg-color">梯度下降</span>
                     </a>
                     
                 </div>
@@ -660,29 +648,32 @@ WX = 0
         
         <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                Current&nbsp;<i class="fa fa-dot-circle-o"></i>
+                Next&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/06/17/NLP-最大匹配算法/">
+                <a href="/2019/07/09/NShort算法/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="最大匹配算法">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="NShort算法">
                         
-                        <span class="card-title">最大匹配算法</span>
+                        <span class="card-title">NShort算法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            最大匹配算法是分词算法，一般有正向匹配算法、逆向匹配算法。
-参考博客：https://www.cnblogs.com/Jm-15/p/9403352.html
-一、正向匹配算法选取一元词典中最长的词的长度作为切割长度（如词典中“中华人名共和
+                            参考博文：https://max.book118.com/html/2018/0506/165048123.shtm
+
+
+
+
+
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-17
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-09
                             </span>
                         <span class="publish-author">
                             
@@ -692,7 +683,6 @@ WX = 0
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
