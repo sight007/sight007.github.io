@@ -4,9 +4,10 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="无偏估计 除以n-1的问题, null">
-    <meta name="description" content="https://blog.csdn.net/Hearthougan/article/details/77859173
-样本均值为$\overline{X}$，样本方差为$\ S^2$，总体均值为$\mu$，总体方差为$\sigma^2$，那">
+    <meta name="keywords" content="记一次Oracle导入dmp数据, null">
+    <meta name="description" content="最近做中英翻译原始数据处理，从总库导出的dmp老是有问题，花费了一番功夫才搞定，记录一下，免得以后再找。
+dmp的版本有问题：下载了小工具AlxcTools.exe更改了dmp的版本。
+表空间找不到：翻阅了许多博客，最终还是创建了空表，更改">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +15,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>无偏估计 除以n-1的问题 | null</title>
+    <title>记一次Oracle导入dmp数据 | null</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -261,13 +262,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        无偏估计 除以n-1的问题
+                        记一次Oracle导入dmp数据
                     </div>
                 </div>
             </div>
@@ -378,12 +379,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/样本估计/" target="_blank">
-                                <span class="chip bg-color">样本估计</span>
+                            <a href="/tags/Oracle/" target="_blank">
+                                <span class="chip bg-color">Oracle</span>
                             </a>
                         
-                            <a href="/tags/统计学/" target="_blank">
-                                <span class="chip bg-color">统计学</span>
+                            <a href="/tags/数据库/" target="_blank">
+                                <span class="chip bg-color">数据库</span>
                             </a>
                         
                     </div>
@@ -397,7 +398,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2019-07-18
+                    2019-08-01
                 </div>
 
                 
@@ -413,18 +414,11 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><a href="https://blog.csdn.net/Hearthougan/article/details/77859173" target="_blank" rel="noopener">https://blog.csdn.net/Hearthougan/article/details/77859173</a></p>
-<p>样本均值为$\overline{X}$，样本方差为$\ S^2$，总体均值为$\mu$，总体方差为$\sigma^2$，那么样本方差$\ S^2$的公式为：<br>$$<br>\ S^2 = \dfrac{1}{n-1} \sum_{i=1}^{n}(x_i - \overline X)^2<br>$$<br>标准的方差公式都是除以$n$，这种计算方法合情合理，没有毛病。</p>
-<p>但上面的公式需要除以$（n-1）$，此时求的是无偏估计。</p>
-<p>所谓无偏估计就是指：</p>
-<ul>
-<li>无偏估计是用<a href="https://baike.baidu.com/item/%E6%A0%B7%E6%9C%AC/19974592" target="_blank" rel="noopener">样本</a>统计量来估计总体参数时的一种无偏推断。估计量的<a href="https://baike.baidu.com/item/%E6%95%B0%E5%AD%A6%E6%9C%9F%E6%9C%9B/5362790" target="_blank" rel="noopener">数学期望</a>等于被估计参数的<a href="https://baike.baidu.com/item/%E7%9C%9F%E5%AE%9E%E5%80%BC/4519199" target="_blank" rel="noopener">真实值</a>，则称此估计量为被估计参数的无偏估计，即具有无偏性，是一种用于评价估计量优良性的准则。无偏估计的意义是：在多次重复下，它们的平均数接近所估计的参数真值。无偏估计常被应用于测验分数统计中。</li>
-</ul>
-<p>可见，利用样本求总体的方差时，如果除以$n$，那么所得到的值应该小于总体方差 $\sigma ^2$。为了得到无偏差性的结果，也就是这个结果的期望值是真实的总体方差，必须要除以一个$n$小一点的数，这个数是多少，请看下面的数学推导。</p>
-<p><img src="/2019/07/18/无偏估计-除以n-1的问题/1.jpg" alt></p>
-<p><img src="/2019/07/18/无偏估计-除以n-1的问题/WorkSpaces\hexoWork\myHexoblog\source\_posts\无偏估计-除以n-1的问题\2.jpg" alt></p>
-<p><img src="/2019/07/18/无偏估计-除以n-1的问题/WorkSpaces\hexoWork\myHexoblog\source\_posts\无偏估计-除以n-1的问题\3.jpg" alt></p>
-
+                <p>最近做中英翻译原始数据处理，从总库导出的dmp老是有问题，花费了一番功夫才搞定，记录一下，免得以后再找。</p>
+<p>dmp的版本有问题：下载了小工具AlxcTools.exe更改了dmp的版本。</p>
+<p>表空间找不到：翻阅了许多博客，最终还是创建了空表，更改了原来表空间的名字。导入命令如下：</p>
+<pre><code>imp username/password@ORCL_124 file=xxxx.dmp ignore=y tablespaces=ZLJG_YS log=log.txt full=y
+</code></pre>
             </div>
             <hr/>
 
@@ -458,9 +452,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《无偏估计 除以n-1的问题》
+                    《记一次Oracle导入dmp数据》
                 </span> by
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/07/18/无偏估计-除以n-1的问题/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/08/01/记一次Oracle导入dmp数据/" property="cc:attributionName"
                rel="cc:attributionURL">
                 sight007
             </a> is licensed under a
@@ -501,7 +495,7 @@
         repo: '',
         owner: '',
         admin: null,
-        id: '2019-07-18T12-41-14',
+        id: '2019-08-01T15-29-19',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -520,7 +514,7 @@
 <script src="/libs/gitment/gitment.js"></script>
 <script>
 var gitment = new Gitment({
-    id: 'Thu Jul 18 2019 12:41:14 GMT+0800',
+    id: 'Thu Aug 01 2019 15:29:19 GMT+0800',
     owner: '',
     repo: '',
     oauth: {
@@ -544,9 +538,9 @@ gitment.render('gitment-content');
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'http://sight007.github.io/2019/07/18/无偏估计-除以n-1的问题/';
-        this.page.identifier = '/2019/07/18/无偏估计-除以n-1的问题/';
-        this.page.title = '无偏估计 除以n-1的问题';
+        this.page.url = 'http://sight007.github.io/2019/08/01/记一次Oracle导入dmp数据/';
+        this.page.identifier = '/2019/08/01/记一次Oracle导入dmp数据/';
+        this.page.title = '记一次Oracle导入dmp数据';
     };
     let disqus_shortname = '';
 
@@ -591,9 +585,10 @@ gitment.render('gitment-content');
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
+        <div class="article col s12 m6 overflow-policy" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;Current
+            </div>
             <div class="card">
                 <a href="/2019/08/01/记一次Oracle导入dmp数据/">
                     <div class="card-image">
@@ -613,9 +608,9 @@ dmp的版本有问题：下载了小工具AlxcTools.exe更改了dmp的版本。
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-01
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-01
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
@@ -624,6 +619,7 @@ dmp的版本有问题：下载了小工具AlxcTools.exe更改了dmp的版本。
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -646,21 +642,20 @@ dmp的版本有问题：下载了小工具AlxcTools.exe更改了dmp的版本。
                 Next&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/07/18/交叉熵损失函数求导-梯度下降算法/">
+                <a href="/2019/07/18/无偏估计-除以n-1的问题/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="交叉熵损失函数求导 梯度下降算法">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="无偏估计 除以n-1的问题">
                         
-                        <span class="card-title">交叉熵损失函数求导 梯度下降算法</span>
+                        <span class="card-title">无偏估计 除以n-1的问题</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-利用链式法则把交叉熵求导分解为三部分，分别求出各部分。
-
+                            https://blog.csdn.net/Hearthougan/article/details/77859173
+样本均值为$\overline{X}$，样本方差为$\ S^2$，总体均值为$\mu$，总体方差为$\sigma^2$，那
                         
                     </div>
                     <div class="publish-info">
@@ -678,20 +673,12 @@ dmp的版本有问题：下载了小工具AlxcTools.exe更改了dmp的版本。
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/机器学习/" target="_blank">
-                        <span class="chip bg-color">机器学习</span>
+                    <a href="/tags/样本估计/" target="_blank">
+                        <span class="chip bg-color">样本估计</span>
                     </a>
                     
-                    <a href="/tags/损失函数/" target="_blank">
-                        <span class="chip bg-color">损失函数</span>
-                    </a>
-                    
-                    <a href="/tags/逻辑回归/" target="_blank">
-                        <span class="chip bg-color">逻辑回归</span>
-                    </a>
-                    
-                    <a href="/tags/梯度下降/" target="_blank">
-                        <span class="chip bg-color">梯度下降</span>
+                    <a href="/tags/统计学/" target="_blank">
+                        <span class="chip bg-color">统计学</span>
                     </a>
                     
                 </div>
