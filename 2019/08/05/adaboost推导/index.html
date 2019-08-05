@@ -5,10 +5,11 @@
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     <meta name="keywords" content="adaboost推导, null">
-    <meta name="description" content="记录一下自己学习Adaboost的过程，把还未弄清楚的写下来。
-参考博文有些博文确实写的好，不光借助了博客，还翻阅了西瓜书，PMML，ESL。下面给出链接：
+    <meta name="description" content="记录一下自己学习Adaboost的过程，把还未弄清楚的写下来。先看博文熟悉，在看问题和推导。
+问题Adaboost是一个很经典的算法，具体怎么做就不赘述了。仅谈一下一些疑问？
 
-https://blog.csdn.net/submarineas/articl">
+Adaboost中样本的权重更新公式怎么来的？
+西瓜书上是以泰">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -419,14 +420,7 @@ https://blog.csdn.net/submarineas/articl">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>记录一下自己学习Adaboost的过程，把还未弄清楚的写下来。</p>
-<h2 id="参考博文"><a href="#参考博文" class="headerlink" title="参考博文"></a>参考博文</h2><p>有些博文确实写的好，不光借助了博客，还翻阅了西瓜书，PMML，ESL。下面给出链接：</p>
-<ul>
-<li><a href="https://blog.csdn.net/submarineas/article/details/86020419" target="_blank" rel="noopener">https://blog.csdn.net/submarineas/article/details/86020419</a></li>
-<li><a href="https://blog.csdn.net/LIYUAN123ZHOUHUI/article/details/51720472" target="_blank" rel="noopener">https://blog.csdn.net/LIYUAN123ZHOUHUI/article/details/51720472</a></li>
-<li><a href="http://www.loyhome.com/%E2%89%AA%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E7%B2%BE%E8%A6%81the-elements-of-statistical-learning%E2%89%AB%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0%EF%BC%88%E5%8D%81%E5%9B%9B%EF%BC%89/" target="_blank" rel="noopener">http://www.loyhome.com/%E2%89%AA%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E7%B2%BE%E8%A6%81the-elements-of-statistical-learning%E2%89%AB%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0%EF%BC%88%E5%8D%81%E5%9B%9B%EF%BC%89/</a></li>
-<li><a href="https://blog.csdn.net/BIT_666/article/details/80279844" target="_blank" rel="noopener">https://blog.csdn.net/BIT_666/article/details/80279844</a></li>
-</ul>
+                <p>记录一下自己学习Adaboost的过程，把还未弄清楚的写下来。先看博文熟悉，在看问题和推导。</p>
 <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>Adaboost是一个很经典的算法，具体怎么做就不赘述了。仅谈一下一些疑问？</p>
 <ul>
 <li>Adaboost中样本的权重更新公式怎么来的？<ol>
@@ -434,15 +428,30 @@ https://blog.csdn.net/submarineas/articl">
 <li>PMML以及其他博客都是由Wi递归推导得出，但这似乎不太全面</li>
 </ol>
 </li>
-<li>Adaboost的算法描述中，用全部的样本训练当前的基模型 ，如果数据量很大，这显然是不可能的<ol>
-<li>如果基模型的误差权重之和em大于0.5，那么这个基模型抛弃，整个模型停止</li>
-<li>重采样法，自助采样法，训练模型，利用模型粗分，算em。。。大概流程是这样，还需要资料，详细的看一下</li>
-</ol>
+<li>Adaboost的算法描述中，用全部的样本训练当前的基模型 ，如果数据量很大，这显然是不可能的<ul>
+<li>如果基模型的误差权重之和em大于0.5，那么这个基模型抛弃，学习过程有可能停止，导致学习不充分而泛化能力较差。因此，可采用“重采样”（re-sampling）避免训练过程过早停止；即抛弃当前不满足条件的基分类器，基于重新采样的数据训练分类器，从而获得学习“重启动”机会。</li>
+</ul>
 </li>
-<li>Adaboost的误差边界计算，这个全是数学证明。有时间再看。</li>
+<li><p>Adaboost的误差边界计算，这个全是数学证明。有时间再看。</p>
+</li>
+<li><p>Adaboost为什么不会过拟合？</p>
+<ul>
+<li>关于Adaboost，它是boosting算法，从bias-variance（偏差-方差）的角度来看，boosting算法主要关注的是降低偏差</li>
+<li>而boosting算法每个分类器都是弱分类器，而弱分类器的特性就是high-bias &amp; low variance（高偏差-低方差），其与生俱来的优点就是泛化性能好</li>
+<li>因此，将多个算法组合起来之后，可以达到降偏差的效果，进而得到一个偏差小、方差小的泛化能力好的模型。</li>
+</ul>
+</li>
 </ul>
 <h2 id="基模型权重推导"><a href="#基模型权重推导" class="headerlink" title="基模型权重推导"></a>基模型权重推导</h2><p><img src="/2019/08/05/adaboost推导/1.jpg" alt></p>
 <p><img src="/2019/08/05/adaboost推导/2.jpg" alt></p>
+<h2 id="参考博文"><a href="#参考博文" class="headerlink" title="参考博文"></a>参考博文</h2><p>有些博文确实写的好，不光借助了博客，还翻阅了西瓜书，PMML，ESL。下面给出链接：</p>
+<ul>
+<li><a href="https://blog.csdn.net/submarineas/article/details/86020419" target="_blank" rel="noopener">https://blog.csdn.net/submarineas/article/details/86020419</a></li>
+<li><a href="https://blog.csdn.net/LIYUAN123ZHOUHUI/article/details/51720472" target="_blank" rel="noopener">https://blog.csdn.net/LIYUAN123ZHOUHUI/article/details/51720472</a></li>
+<li><a href="http://www.loyhome.com/%E2%89%AA%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E7%B2%BE%E8%A6%81the-elements-of-statistical-learning%E2%89%AB%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0%EF%BC%88%E5%8D%81%E5%9B%9B%EF%BC%89/" target="_blank" rel="noopener">http://www.loyhome.com/%E2%89%AA%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E7%B2%BE%E8%A6%81the-elements-of-statistical-learning%E2%89%AB%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0%EF%BC%88%E5%8D%81%E5%9B%9B%EF%BC%89/</a></li>
+<li><a href="https://blog.csdn.net/BIT_666/article/details/80279844" target="_blank" rel="noopener">https://blog.csdn.net/BIT_666/article/details/80279844</a></li>
+<li><a href="https://www.cnblogs.com/xiaoyun94/p/7382221.html" target="_blank" rel="noopener">https://www.cnblogs.com/xiaoyun94/p/7382221.html</a></li>
+</ul>
 
             </div>
             <hr/>
@@ -627,10 +636,11 @@ gitment.render('gitment-content');
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            记录一下自己学习Adaboost的过程，把还未弄清楚的写下来。
-参考博文有些博文确实写的好，不光借助了博客，还翻阅了西瓜书，PMML，ESL。下面给出链接：
+                            记录一下自己学习Adaboost的过程，把还未弄清楚的写下来。先看博文熟悉，在看问题和推导。
+问题Adaboost是一个很经典的算法，具体怎么做就不赘述了。仅谈一下一些疑问？
 
-https://blog.csdn.net/submarineas/articl
+Adaboost中样本的权重更新公式怎么来的？
+西瓜书上是以泰
                         
                     </div>
                     <div class="publish-info">
