@@ -444,6 +444,12 @@ Adaboost中样本的权重更新公式怎么来的？
 </ul>
 <h2 id="基模型权重推导"><a href="#基模型权重推导" class="headerlink" title="基模型权重推导"></a>基模型权重推导</h2><p><img src="/2019/08/05/adaboost推导/1.jpg" alt></p>
 <p><img src="/2019/08/05/adaboost推导/2.jpg" alt></p>
+<h2 id="记录"><a href="#记录" class="headerlink" title="记录"></a>记录</h2><ul>
+<li>每个基模型算出来的是带权重的分类结果，经过各个基模型加权得到的<code>f(x)</code>，最后需要取<code>sign(f(x))</code>才能得出结果。</li>
+<li>基模型的选择应该使<code>em</code>最小。</li>
+<li>样本权重是上一个基模型为当前基模型计算的。</li>
+<li>能用前向分步算法计算出当前模型的原型，这是因为<code>em</code>默认为已知了，也就是当前基模型假定已确定。</li>
+</ul>
 <h2 id="参考博文"><a href="#参考博文" class="headerlink" title="参考博文"></a>参考博文</h2><p>有些博文确实写的好，不光借助了博客，还翻阅了西瓜书，PMML，ESL。下面给出链接：</p>
 <ul>
 <li><a href="https://blog.csdn.net/submarineas/article/details/86020419" target="_blank" rel="noopener">https://blog.csdn.net/submarineas/article/details/86020419</a></li>
